@@ -23,4 +23,44 @@ class CelticsRoster::Player
       )
   end
   
+  def page
+    @page ||= Nokoguri::HTML(open(self.url))
+  end 
+  
+  def body
+    @body ||= page.css("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(2)").text
+  end 
+  
+  def age
+    @age ||= page.css("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(6)").text
+  end 
+  
+  def hometown
+    
+  end
+  
+  def school
+    
+  end
+  
+  def experience
+    
+  end
+  
+  def points
+    
+  end
+  
+  def rebounds
+    
+  end
+  
+  def assists
+    
+  end
+  
+  def field_goal
+    
+  end
+  
 end
