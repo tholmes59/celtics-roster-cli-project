@@ -1,0 +1,5 @@
+class CelticsRoster::CLI 
+  
+  
+  
+end

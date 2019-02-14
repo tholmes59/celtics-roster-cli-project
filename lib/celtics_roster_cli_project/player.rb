@@ -1,0 +1,6 @@
+class CelticsRoster::Player
+  
+  
+  
+  
+end
