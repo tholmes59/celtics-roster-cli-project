@@ -16,6 +16,11 @@ class CelticsRoster::Player
   end
   
   def self.new_player(player)
-    self.new(player.search("span.CellPlayerName--long a").text), player.search("td:nth-child(3)").text.split(" ").join(" ")), "https://www.cbssports.com/nba/teams/BOS/boston-celtics/roster/#{player.search(")
+    self.new(
+      player.search("span.CellPlayerName--long a").text), #creates player name
+      player.search("td:nth-child(3)").text.split(" ").join(" ")), #creates player position
+      "https://www.cbssports.com/nba/teams/BOS/boston-celtics/roster/#{player.search("span.CellPlayerName--long a").attribute('href').text}" #creates player url
+      )
+  end
   
 end
