@@ -28,39 +28,39 @@ class CelticsRoster::Player
   end 
   
   def body
-    @body ||= page.css("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(2)").text
+    @body ||= page.search("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(2)").text
   end 
   
   def age
-    @age ||= page.css("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(6)").text
+    @age ||= page.search("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(6)").text
   end 
   
   def hometown
-    
+    @hometown ||= page.search("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(8)").text
   end
   
   def school
-    
+    @school ||= page.search("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(12)").text
   end
   
   def experience
-    
+    @experience ||= page.search("div.featureComponent.stdPad.mBottom10 dl dd:nth-child(14)").text
   end
   
   def points
-    
+    @points ||= page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(3)").text
   end
   
   def rebounds
-    
+    @rebounds ||= page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(4)").text
   end
   
   def assists
-    
+    @assists ||= page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(5)").text
   end
   
   def field_goal
-    
+    @field_goal || = page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(6)").text
   end
   
 end
