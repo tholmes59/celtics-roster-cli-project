@@ -15,5 +15,7 @@ class CelticsRoster::Player
     @@all
   end
   
+  def self.new_player(player)
+    self.new(player.search("span.CellPlayerName--long a").text), player.search("td:nth-child(3)").text.split(" ").join(" ")), "https://www.cbssports.com/nba/teams/BOS/boston-celtics/roster/#{player.search(")
   
 end
