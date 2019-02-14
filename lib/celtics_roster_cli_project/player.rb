@@ -62,5 +62,5 @@ class CelticsRoster::Player
   def field_goal
     @field_goal || = page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(6)").text
   end
-  
+
 end

@@ -1,6 +1,9 @@
 class CelticsRoster::CLI 
   
   def call 
+    CelticsRoster::Scraper.new.create_player
+    puts "Welcome to the current roster for the Boston Celtics"
+    list_players
     #initiate the scrape
     #call a method to print a list of players
     #call a method to display individual players
@@ -8,8 +11,13 @@ class CelticsRoster::CLI
   end 
   
   def list_players
-    
-   # puts "1. Playername - position"
+    puts " "
+    puts "Below is the current roster:"
+    CelticsRoster::Player.all.each.with_index(1) do |player, i|
+      puts "#{i}. #{player.name}  #{player.position}"
+    end
+    puts " "
+    puts "Please enter the number of the player you would like additional information on, or type exit."
   end
   
   def display_player
