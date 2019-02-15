@@ -8,7 +8,7 @@ class CelticsRosterCliProject::Scraper
     self.get_page.search("div.TableBase-overflow tbody td")
   end 
   
-  def create_player
+  def create_the_players
     scrape_roster.each do |player|
       CelticsRosterCliProject::Player.new_player(player)
     end
