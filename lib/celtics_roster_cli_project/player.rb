@@ -8,7 +8,7 @@ class CelticsRosterCliProject::Player
     @name = name
     @position = position
     @url = url
-    @@all << all
+    @@all << self
   end 
   
   def self.all
@@ -19,7 +19,7 @@ class CelticsRosterCliProject::Player
     self.new(
       player.search("span.CellPlayerName--long a").text, #creates player name
       player.search("td:nth-child(3)").text.split(" ").join(" "), #creates player position
-      "https://www.cbssports.com/nba/teams/BOS/boston-celtics/roster/#{player.search("span.CellPlayerName--long a").attribute('href').text}" #creates player url
+      "https://www.cbssports.com/nba/teams/BOS/boston-celtics/roster/#{player.search("span.CellPlayerName--long a").attribute('href')}" #creates player url
       )
   end
   
