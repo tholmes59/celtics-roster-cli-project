@@ -14,7 +14,7 @@ class CelticsRosterCliProject::CLI
     puts " "
     puts "Below is the current roster:"
     CelticsRosterCliProject::Player.all.each.with_index(1) do |player, i|
-      puts "#{i}. #{player.name}  #{player.position}"
+      puts "#{i}. #{player.url}"
     end
     puts " "
     puts "Please enter the number of the player you would like additional information on, or type exit."
