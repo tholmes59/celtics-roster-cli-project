@@ -1,12 +1,18 @@
 class CelticsRosterCliProject::Player
   
-  attr_accessor :name, :position, :url, :body, :age, :hometown, :school, :experience, :points, :rebounds, :assists, :field_goal
+  attr_accessor :name, :url, :body, :age, :hometown, :school, :experience, :points, :rebounds, :assists, :field_goal, :position
   
   @@all = []
   
-  def initialize(name = nil, position = nil, url = nil)
+  def self.new_player(player)
+    self.new(
+      player.search("span.CellPlayerName--long a").text, #creates player name
+      "https://www.cbssports.com#{player.css("span.CellPlayerName--long a").attribute('href')}" #creates player url
+      )
+  end
+  
+  def initialize(name = nil, url = nil)
     @name = name
-    @position = position
     @url = url
     @@all << self
   end 
@@ -15,13 +21,6 @@ class CelticsRosterCliProject::Player
     @@all
   end
   
-  def self.new_player(player)
-    self.new(
-      player.search("span.CellPlayerName--long a").text, #creates player name
-      player.search("td:nth-child(3)").text.split(" ").join(" "), #creates player position
-      "https://www.cbssports.com#{player.css("span.CellPlayerName--long a").attribute('href')}" #creates player url
-      )
-  end
   
   def page
     @page ||= Nokogiri::HTML(open(self.url))
@@ -61,6 +60,10 @@ class CelticsRosterCliProject::Player
   
   def field_goal
     @field_goal ||= page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(6)").text
+  end
+  
+  def position
+    @position ||= page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(6)").text
   end
 
 end
