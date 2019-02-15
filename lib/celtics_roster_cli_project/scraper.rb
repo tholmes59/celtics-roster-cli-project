@@ -1,4 +1,4 @@
-class CelticsRoster::Scraper
+class CelticsRosterCliProject::Scraper
   
   def get_page
     Nokogiri::HTML(open("https://www.cbssports.com/nba/teams/BOS/boston-celtics/roster/"))
@@ -10,7 +10,7 @@ class CelticsRoster::Scraper
   
   def create_player
     scrape_roster.each do |player|
-      CelticsRoster::Player.new_player(player)
+      CelticsRosterCliProject::Player.new_player(player)
     end
   end
   

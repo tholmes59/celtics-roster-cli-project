@@ -1,4 +1,4 @@
-class CelticsRoster::Player
+class CelticsRosterCliProject::Player
   
   attr_accessor :name, :position, :url, :body, :age, :hometown, :school, :experience, :points, :rebounds, :assists, :field_goal
   
@@ -17,8 +17,8 @@ class CelticsRoster::Player
   
   def self.new_player(player)
     self.new(
-      player.search("span.CellPlayerName--long a").text), #creates player name
-      player.search("td:nth-child(3)").text.split(" ").join(" ")), #creates player position
+      player.search("span.CellPlayerName--long a").text, #creates player name
+      player.search("td:nth-child(3)").text.split(" ").join(" "), #creates player position
       "https://www.cbssports.com/nba/teams/BOS/boston-celtics/roster/#{player.search("span.CellPlayerName--long a").attribute('href').text}" #creates player url
       )
   end
@@ -60,7 +60,7 @@ class CelticsRoster::Player
   end
   
   def field_goal
-    @field_goal || = page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(6)").text
+    @field_goal ||= page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(6)").text
   end
 
 end
