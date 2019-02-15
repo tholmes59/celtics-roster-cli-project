@@ -63,7 +63,7 @@ class CelticsRosterCliProject::Player
   end
   
   def position
-    @position ||= page.search("div.stats.fRight.stdMargin tr:nth-child(3) td:nth-child(6)").text
+    @position ||= page.search("div.row.row-no-pad h1 span:nth-child(3)").text
   end
 
 end
