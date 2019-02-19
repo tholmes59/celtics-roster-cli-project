@@ -5,9 +5,6 @@ class CelticsRosterCliProject::CLI
     puts "Welcome to the current roster for the Boston Celtics"
     list_players
     display_player
-    
-    #call a method to display individual players
-    #goodbye method
   end 
   
   def list_players
