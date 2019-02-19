@@ -5,7 +5,7 @@ class CelticsRosterCliProject::Scraper
   end 
   
   def scrape_roster
-    self.get_page.search("div.TableBase-overflow tbody tr")
+    self.get_page.search("div.TableBase-overflow tbody td")
   end 
   
   def create_the_players
