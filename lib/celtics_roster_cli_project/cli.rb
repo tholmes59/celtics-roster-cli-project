@@ -4,8 +4,8 @@ class CelticsRosterCliProject::CLI
     CelticsRosterCliProject::Scraper.new.create_the_players
     puts "Welcome to the current roster for the Boston Celtics"
     list_players
-    #initiate the scrape
-    #call a method to print a list of players
+    display_player
+    
     #call a method to display individual players
     #goodbye method
   end 
@@ -18,11 +18,20 @@ class CelticsRosterCliProject::CLI
       puts "#{i}. #{player.name}"
     end
     puts " "
-    puts "Please enter the number of the player you would like additional information on, or type exit."
+    
   end
  
   def display_player
+    input = nil 
+    while input != "exit"
+    puts "Please enter the number of the player you would like additional information on, or type exit."
+    input = gets.strip 
+    player = @players[input.to_i-1]
+    puts ""
+    puts"----------------------------------------------------------------------------------------------"
+    puts "#{player.name} - #{player.position}"
     
+  end
     
     #puts height/weight
     #puts age 
