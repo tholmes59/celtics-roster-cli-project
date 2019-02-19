@@ -1,8 +1,6 @@
 # CelticsRosterCliProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/celtics_roster_cli_project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Boston Celtics Roster command line interface program! This program will allow you to view a list of the current roster for the NBA's Boston Celtics. From there it allows you to drill down to each individual player on the team and view additional information on the player as well as see their current season statisitcs. 
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use this program to get detailed information on each current member of the Boston Celtics. Type the number of the player you would like to see additional information for. When finished viewing, you can either view another player's details or exit the program.
 
 ## Development
 
