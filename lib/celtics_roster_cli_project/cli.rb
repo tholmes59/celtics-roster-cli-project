@@ -35,13 +35,15 @@ class CelticsRosterCliProject::CLI
     puts "School:           #{player.school}"
     puts "Yrs Experience:   #{player.experience}"
     puts " "
-    
+    puts "***Season Stats***"
+    puts " "
+    puts "Points/game:      #{player.points}"
+    puts "Rebounds/game:    #{player.rebounds}"
+    puts "Assists/game:     #{player.assists}"
+    puts "Field Goal %:     #{player.field_goal}"
+    puts " "
  end
-    #puts height/weight
-    #puts age 
-    #puts hometown
-    #puts school
-    #puts years of experience
+    
     
     # stats 
     #puts points per game 
