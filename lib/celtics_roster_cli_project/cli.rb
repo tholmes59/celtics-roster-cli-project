@@ -23,7 +23,7 @@ class CelticsRosterCliProject::CLI
   def display_player
     input = nil 
     while input != "exit"
-    puts "Please enter the number of the player you would like additional information on, or type exit."
+    puts "Please enter the number of the player you would like additional information on."
     input = gets.strip 
     player = @players[input.to_i-1]
     puts " "
@@ -42,15 +42,18 @@ class CelticsRosterCliProject::CLI
     puts "Assists/game:     #{player.assists}"
     puts "Field Goal %:     #{player.field_goal}"
     puts " "
- end
-    
-    
-    # stats 
-    #puts points per game 
-    #puts rebounds per game
-    #puts assists per game
-    #puts field goal percentage
+    puts "Would you like to see information on another player? Type Yes or No"
+    input = gets.strip.downcase
+    if input == "yes"
+      list_players
+    elsif input == "no"
+      puts "Goodbye. Go Celtics!"
+      exit
+    else 
+      puts " "
+      puts "I did not understand your answer"
+      list_players
+    end
+    end
   end
-  
-  
 end
