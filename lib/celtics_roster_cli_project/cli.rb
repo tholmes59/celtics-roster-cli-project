@@ -29,7 +29,12 @@ class CelticsRosterCliProject::CLI
     puts " "
     puts "#{player.name} - #{player.position}"
     puts " "
-    
+    puts "Height/weight:    #{player.body}"
+    puts "Age:              #{player.age}"
+    puts "Hometown:         #{player.hometown}"
+    puts "School:           #{player.school}"
+    puts "Yrs Experience:   #{player.experience}"
+    puts " "
     
  end
     #puts height/weight
