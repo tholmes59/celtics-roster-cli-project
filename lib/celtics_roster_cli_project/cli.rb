@@ -18,7 +18,6 @@ class CelticsRosterCliProject::CLI
       puts "#{i}. #{player.name}"
     end
     puts " "
-    
   end
  
   def display_player
@@ -27,12 +26,12 @@ class CelticsRosterCliProject::CLI
     puts "Please enter the number of the player you would like additional information on, or type exit."
     input = gets.strip 
     player = @players[input.to_i-1]
-    puts ""
-    puts"----------------------------------------------------------------------------------------------"
+    puts " "
     puts "#{player.name} - #{player.position}"
+    puts " "
     
-  end
     
+ end
     #puts height/weight
     #puts age 
     #puts hometown
