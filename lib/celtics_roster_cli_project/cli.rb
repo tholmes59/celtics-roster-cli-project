@@ -21,7 +21,8 @@ class CelticsRosterCliProject::CLI
     input = nil 
     while input != "exit"
     puts "Please enter the number of the player you would like additional information on."
-    input = gets.strip 
+    input = gets.strip
+    if input.to_i > 0 && input.to_i < 17
     player = @players[input.to_i-1]
     puts " "
     puts "#{player.name} - #{player.position}"
@@ -39,6 +40,12 @@ class CelticsRosterCliProject::CLI
     puts "Assists/game:     #{player.assists}"
     puts "Field Goal %:     #{player.field_goal}"
     puts " "
+    else 
+    puts " "
+    puts "That is not a player, please select again"
+    list_players
+    display_player
+    end
     puts "Would you like to see information on another player? Type Yes or No"
     input = gets.strip.downcase
     if input == "yes"
