@@ -4,8 +4,6 @@ class CelticsRosterCliProject::Player
   
   @@all = []
   
-  
- 
   def initialize(name = nil, url = nil)
     @name = name
     @url = url
@@ -15,8 +13,5 @@ class CelticsRosterCliProject::Player
   def self.all
     @@all
   end
-  
-  
-  
 
 end
