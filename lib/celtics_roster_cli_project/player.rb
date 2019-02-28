@@ -4,12 +4,7 @@ class CelticsRosterCliProject::Player
   
   @@all = []
   
-  def self.new_player(player)
-    self.new(
-      player.search("span.CellPlayerName--long a").text, #creates player name
-      "https://www.cbssports.com#{player.search("span.CellPlayerName--long a").attribute('href')}" #creates player url
-      )
-  end
+  
  
   def initialize(name = nil, url = nil)
     @name = name
