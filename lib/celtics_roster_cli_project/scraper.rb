@@ -7,12 +7,12 @@ class CelticsRosterCliProject::Scraper
   
   def create_the_players
     scrape_roster.each do |player|
-      CelticsRosterCliProject::Player.new_player(player)
+      self.new_player(player)
     end
   end
   
   def self.new_player(player)
-    self.new(
+    CelticsRosterCliProject::Player.new(
       player.search("span.CellPlayerName--long a").text, #creates player name
       "https://www.cbssports.com#{player.search("span.CellPlayerName--long a").attribute('href')}" #creates player url
       )
