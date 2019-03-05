@@ -22,9 +22,9 @@ class CelticsRosterCliProject::CLI
     while input != "exit"
     puts "Please enter the number of the player you would like additional information on."
     input = gets.strip
-    if input.to_i > 0 && input.to_i < 17
+    if input.to_i > 0 && input.to_i < @players.length
     player = @players[input.to_i-1]
-    CelticsRosterCliProject::Scraper.new.scrape_player_details(player)
+    CelticsRosterCliProject::Scraper.new.scrape_player_details(player) 
     puts " "
     puts "#{player.name} - #{player.position}"
     puts " "
