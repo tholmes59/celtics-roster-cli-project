@@ -24,7 +24,7 @@ class CelticsRosterCliProject::CLI
     input = gets.strip
     if input.to_i > 0 && input.to_i < @players.length
     player = @players[input.to_i-1]
-    CelticsRosterCliProject::Scraper.new.scrape_player_details(player) 
+    CelticsRosterCliProject::Scraper.new.scrape_player_details(player) if player.position == nil
     puts " "
     puts "#{player.name} - #{player.position}"
     puts " "
